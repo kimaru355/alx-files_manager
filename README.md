@@ -1,73 +1,31 @@
-#Files manager
->REST API for managing and sharing files
+# Files Manager Alx
 
-Simple file management API that allows users to:
+This project is a compilation of back-end concepts: authentication, NodeJS, MongoDB, Redis, pagination and background processing.
 
-- Upload files
-- Retrieve information about the files
-- Download the files
-- Share uploaded files with other users
+The objective is to build a simple platform to upload and view files with:
 
-## How to Run
+- User authentication via a token
+- Listing of all files
+- Uploading a new file
+- Changing permissions of a file
+- Viewing a file
+- Generating thumbnails for images
 
-Clone the repo
+## Core technologies
 
-```
-git clone https://github.com/kimaru355/alx-files_manager.git
-```
+|                                                                                                         |                                                                                      |                                                                                              |
+| ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------- |
+| ![Redis](https://upload.wikimedia.org/wikipedia/en/thumb/6/6b/Redis_Logo.svg/1000px-Redis_Logo.svg.png) | ![MongoDB](https://webassets.mongodb.com/_com_assets/cms/mongodb_logo1-76twgcu2dm.png) | ![NodeJS](https://d2eip9sf3oo6c2.cloudfront.net/tags/images/000/000/256/full/nodejslogo.png) |
 
-Install required dependencies
+## Testing and Jobs
 
-```
-cd alx-files_manager
-npm install
-```
+A queueing job mechanism for creating thumbnails of photos uploaded to the application is included in the project. When a new user is created, it also leverages this feature to generate a welcome message. Bull is used in all of this. 
+![Bull & NodeJS](https://raw.githubusercontent.com/OptimalBits/bull/master/support/logo%402x.png)
 
-Start worker
+Mocha is used in combination with Chai for testing the app.
 
-```
-npm run start-worker
-```
-
-Start express server
-
-```
-npm run start-server
-```
-
-## Environment
-
-Environment variables you can adjust when running the express server
-
-- `PORT`: express server's port
-- `DB_HOST`: mongodb's server host address
-- `DB_PORT`: mongodb's port
-- `DB_DATABASE`: database to use
-- `FOLDER_PATH`: absolute path to folder to store files
-
-## Documentation
-
-The API's documentation is available at
-[here](https://file-manager-api-documentation.vercel.app/)
-
-## Tests
-
-Specify different `DB_DATABASE` and `FOLDER_PATH` environment when running test
-to avoid data loss in main database and folder. Check out [test](tests/) folder
-for unit tests.
-
-- Run specific test
-
-```
-DB_DATABASE='test_database' FOLDER_PATH='/tmp/test_folder' npm test tests/testFile.js
-```
-
-- Run all tests
-
-```
-DB_DATABASE='test_database' FOLDER_PATH='/tmp/test_folder' npm run test-all
-```
+![Mocha & Chai](https://miro.medium.com/max/499/0*WpXBkrfgR2g9dw2T.png)
 
 ## Authors
-
-- [Victor Preston](https://github.com/victorpreston)
+Emediong Francis: emediongfrancis@gmail.com <br>
+Divine Chisom Ukonu: divinechisom1995@gmail.com
